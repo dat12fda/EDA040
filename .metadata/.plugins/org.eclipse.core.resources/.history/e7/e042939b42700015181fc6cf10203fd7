@@ -1,0 +1,64 @@
+package todo;
+
+
+import se.lth.cs.realtime.*;
+import se.lth.cs.realtime.event.RTEvent;
+import done.AbstractWashingMachine;
+
+
+public class WaterController extends PeriodicThread {
+	private AbstractWashingMachine theMachine;
+	private double theSpeed;
+	private double waterLevel;
+	private WaterEvent waterEvent;
+	private int mode;
+	private WashingProgram wp;
+	
+	public WaterController(AbstractWashingMachine mach, double speed) {
+		super((long) (1000/speed)); // TODO: replace with suitable period
+		theMachine = mach;
+		theSpeed = speed;
+		
+	}
+
+	/*
+	public static final int WATER_IDLE  = 0;
+
+	public static final int WATER_FILL  = 1;
+
+	public static final int WATER_DRAIN = 2; */
+	
+	
+	public void perform() {
+		// TODO: implement this method
+		RTEvent rte = this.mailbox.tryFetch();
+		if (rte != null) {
+			waterEvent = (WaterEvent) rte;
+			mode = waterEvent.getMode();
+			waterLevel = waterEvent.getLevel();
+			wp = (WashingProgram) waterEvent.getSource();
+			if (mode == 0) {
+				theMachine.setFill(false);
+				theMachine.setDrain(false);
+			} else if (mode == 1) {
+				theMachine.setFill(true);
+				theMachine.setDrain(false);
+			} else if (mode == 2) {
+				theMachine.setFill(false);
+				theMachine.setDrain(true);
+			}			
+		}
+		if (mode == 1 && theMachine.getWaterLevel() >= waterLevel) {
+			wp.putEvent(new AckEvent(this));
+			theMachine.setFill(false);
+		}
+		
+		if (mode == 2 && theMachine.getWaterLevel() <= 0.0);
+			wp.putEvent(new AckEvent(this));
+			//wp = null;
+			theMachine.setDrain(false);
+			mode = 0;
+		
+	}	
+	
+}

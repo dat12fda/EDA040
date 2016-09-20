@@ -1,0 +1,43 @@
+package todo;
+
+
+import se.lth.cs.realtime.*;
+import se.lth.cs.realtime.event.RTEvent;
+import done.AbstractWashingMachine;
+
+
+public class WaterController extends PeriodicThread {
+	private AbstractWashingMachine theMachine;
+	private double theSpeed;
+	private double waterLevel;
+	private WaterEvent waterEvent;
+	private int program;
+	
+	public WaterController(AbstractWashingMachine mach, double speed) {
+		super((long) (1000/speed)); // TODO: replace with suitable period
+		theMachine = mach;
+		theSpeed = speed;
+		
+	}
+
+	public void perform() {
+		// TODO: implement this method
+		RTEvent rte = this.mailbox.tryFetch();
+		if (rte != null) {
+			waterEvent = (WaterEvent) rte;
+			program = waterEvent.getMode();
+			if (program == 0) {
+				theMachine.setFill(false);
+				theMachine.setDrain(false);
+			} else if (program == 1) {
+				
+			} else if (program == 2) {
+				
+			} else if (program == 3) {
+				theMachine.setFill(false);
+				theMachine.setDrain(true);
+			}
+		}
+	}	
+	
+}

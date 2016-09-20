@@ -1,0 +1,4 @@
+Errors:
+util/Logger.java:8:
+  Semantic Error: no method named format(java.lang.String, java.lang.String, java.lang.String) in java.lang.PhonyWriter matches.
+make: *** [Server.c] Error 1

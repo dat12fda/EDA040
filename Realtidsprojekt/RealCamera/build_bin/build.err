@@ -1,0 +1,121 @@
+aclocal: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+configure.in:36: warning: AM_INIT_AUTOMAKE: two- and three-arguments forms are deprecated.  For more info, see:
+configure.in:36: http://www.gnu.org/software/automake/manual/automake.html#Modernize-AM_005fINIT_005fAUTOMAKE-invocation
+configure.in:1368: installing './compile'
+configure.in:26: installing './config.guess'
+configure.in:26: installing './config.sub'
+configure.in:36: installing './install-sh'
+configure.in:36: installing './missing'
+Makefile.am:274: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am:277: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am:282: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am:285: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am:288: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am:291: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am: installing './INSTALL'
+automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+Makefile.am:175: warning: source file '$(GC_DIR)/gci_common.c' is in a subdirectory,
+Makefile.am:175: but option 'subdir-objects' is disabled
+automake: warning: possible forward-incompatibility.
+automake: At least a source file is in a subdirectory, but the 'subdir-objects'
+automake: automake option hasn't been enabled.  For now, the corresponding output
+automake: object file(s) will be placed in the top-level directory.  However,
+automake: this behaviour will change in future Automake versions: they will
+automake: unconditionally cause object files to be placed in the same subdirectory
+automake: of the corresponding sources.
+automake: You are advised to start using 'subdir-objects' option throughout your
+automake: project, to avoid future incompatibilities.
+Makefile.am:175: warning: source file '$(GC_DIR)/gc_roots.c' is in a subdirectory,
+Makefile.am:175: but option 'subdir-objects' is disabled
+Makefile.am:175: warning: source file '$(GC_DIR)/gci_thread.c' is in a subdirectory,
+Makefile.am:175: but option 'subdir-objects' is disabled
+Makefile.am:175: warning: source file '$(GC_DIR)/gci_sched.c' is in a subdirectory,
+Makefile.am:175: but option 'subdir-objects' is disabled
+Makefile.am:186: warning: source file '$(GC_DIR)/gc_batch_copy.c' is in a subdirectory,
+Makefile.am:186: but option 'subdir-objects' is disabled
+Makefile.am:186: warning: source file '$(GC_DIR)/gc_incremental_copy.c' is in a subdirectory,
+Makefile.am:186: but option 'subdir-objects' is disabled
+Makefile.am:186: warning: source file '$(GC_DIR)/gc_incremental_ms.c' is in a subdirectory,
+Makefile.am:186: but option 'subdir-objects' is disabled
+Makefile.am:186: warning: source file '$(GC_DIR)/gc-ms.c' is in a subdirectory,
+Makefile.am:186: but option 'subdir-objects' is disabled
+Makefile.am:186: warning: source file '$(GC_DIR)/mem.c' is in a subdirectory,
+Makefile.am:186: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/ljrt_threading.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_lang_Thread.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_lang_System.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_lang_Object.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_lang_String.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_net_Socket.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_net_DatagramSocket.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_net_ServerSocket.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_io_OutputStream.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/java_io_InputStream.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/java_lang_Math.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/java_lang_Float.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/java_lang_Double.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/InstanceOf.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/java_lang_VMClass.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/java_lang_Class.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/se_lth_cs_camera_Axis211A.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/se_lth_cs_camera_MotionDetector.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file '$(NATIVE_DIR)/../common/javatypes.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:95: warning: source file 'se/lth/cs/eda040/realcamera/axism3006v.c' is in a subdirectory,
+Makefile.am:95: but option 'subdir-objects' is disabled
+Makefile.am:134: warning: source file '$(NATIVE_DIR)/../common/KernelSymbol.c' is in a subdirectory,
+Makefile.am:134: but option 'subdir-objects' is disabled
+Makefile.am:134: warning: source file '$(NATIVE_DIR)/../common/ImmobileObjectFactory.c' is in a subdirectory,
+Makefile.am:134: but option 'subdir-objects' is disabled
+Makefile.am:129: warning: source file '$(NATIVE_DIR)/../common/java_lang_Math.c' is in a subdirectory,
+Makefile.am:129: but option 'subdir-objects' is disabled
+Makefile.am:140: warning: source file '$(NATIVE_DIR)/se_lth_cs_realtime_RTSystem.c' is in a subdirectory,
+Makefile.am:140: but option 'subdir-objects' is disabled
+Makefile.am:140: warning: source file '$(NATIVE_DIR)/se_lth_cs_realtime_semaphore_BinarySem.c' is in a subdirectory,
+Makefile.am:140: but option 'subdir-objects' is disabled
+Makefile.am:140: warning: source file '$(NATIVE_DIR)/se_lth_cs_realtime_semaphore_CountingSem.c' is in a subdirectory,
+Makefile.am:140: but option 'subdir-objects' is disabled
+Makefile.am:140: warning: source file '$(NATIVE_DIR)/se_lth_cs_realtime_semaphore_MutexSem.c' is in a subdirectory,
+Makefile.am:140: but option 'subdir-objects' is disabled
+Makefile.am:140: warning: source file '$(NATIVE_DIR)/se_lth_cs_realtime_RTThread.c' is in a subdirectory,
+Makefile.am:140: but option 'subdir-objects' is disabled
+Makefile.am:149: warning: source file '$(NATIVE_DIR)/se_lth_cs_robot_irb6_IO.c' is in a subdirectory,
+Makefile.am:149: but option 'subdir-objects' is disabled
+Makefile.am:125: warning: source file '$(NATIVE_DIR)/cpu_utilization_logger.c' is in a subdirectory,
+Makefile.am:125: but option 'subdir-objects' is disabled
+Makefile.am:159: warning: source file '$(NATIVE_DIR)/AVR_Kernel.c' is in a subdirectory,
+Makefile.am:159: but option 'subdir-objects' is disabled
+Makefile.am:159: warning: source file '$(NATIVE_DIR)/AVR_Memory.c' is in a subdirectory,
+Makefile.am:159: but option 'subdir-objects' is disabled
+Makefile.am:159: warning: source file '$(NATIVE_DIR)/AVR_Queue.c' is in a subdirectory,
+Makefile.am:159: but option 'subdir-objects' is disabled
+Makefile.am:159: warning: source file '$(NATIVE_DIR)/AVR_Semaphore.c' is in a subdirectory,
+Makefile.am:159: but option 'subdir-objects' is disabled
+Makefile.am:159: warning: source file '$(NATIVE_DIR)/AVR_Thread.c' is in a subdirectory,
+Makefile.am:159: but option 'subdir-objects' is disabled
+Makefile.am:159: warning: source file '$(NATIVE_DIR)/AVR_LCD.c' is in a subdirectory,
+Makefile.am:159: but option 'subdir-objects' is disabled
+Makefile.am:167: warning: source file '$(NATIVE_DIR)/AVR_ContextSwitch.s' is in a subdirectory,
+Makefile.am:167: but option 'subdir-objects' is disabled
+Makefile.am:167: warning: source file '$(NATIVE_DIR)/xram.s' is in a subdirectory,
+Makefile.am:167: but option 'subdir-objects' is disabled
+Makefile.am: installing './depcomp'

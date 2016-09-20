@@ -1,0 +1,45 @@
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... mipsisa32r2el-axis-linux-gnu
+checking target system type... mipsisa32r2el-axis-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for mipsisa32r2el-axis-linux-gnu-strip... mipsisa32r2el-axis-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for mipsisa32r2el-axis-linux-gnu-gcj... no
+checking for gcj... no
+checking dependency style of gcj... none
+Host is
+host: mipsisa32r2el-axis-linux-gnu
+host_cpu: mipsisa32r2el
+host_vendor: axis
+host_os: linux-gnu
+checking for mipsisa32r2el-axis-linux-gnu-gcc... mipsisa32r2el-axis-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether mipsisa32r2el-axis-linux-gnu-gcc accepts -g... yes
+checking for mipsisa32r2el-axis-linux-gnu-gcc option to accept ISO C89... none needed
+checking whether mipsisa32r2el-axis-linux-gnu-gcc understands -c and -o together... yes
+checking dependency style of mipsisa32r2el-axis-linux-gnu-gcc... gcc3
+checking how to run the C preprocessor... mipsisa32r2el-axis-linux-gnu-gcc -E
+checking for mipsisa32r2el-axis-linux-gnu-ranlib... mipsisa32r2el-axis-linux-gnu-ranlib
+checking for mipsisa32r2el-axis-linux-gnu-ar... mipsisa32r2el-axis-linux-gnu-ar
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for an ANSI C-conforming const... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+java -classpath '/usr/local/cs/rtp/tools/ljrt-rev311/J2CTranslator' JavaGenCCode -classpath '/usr/local/cs/rtp/tools/ljrt-rev311/J2CTranslator/../javalib/java/:/usr/local/cs/rtp/tools/ljrt-rev311/J2CTranslator/../javalib/vm/:..' \
+	-bootclasspath . \
+	 -o Server.c --noredundantpush --deadcode-elim --with-reflection ../Server.java

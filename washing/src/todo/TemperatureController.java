@@ -1,0 +1,59 @@
+package todo;
+
+
+import se.lth.cs.realtime.*;
+import se.lth.cs.realtime.event.RTEvent;
+import done.AbstractWashingMachine;
+
+
+public class TemperatureController extends PeriodicThread {
+	private AbstractWashingMachine theMachine;
+	private double theSpeed;
+	private TemperatureEvent tempEvent;
+	private int mode;
+	private WashingProgram wp;
+	private double setTemperature;
+	
+	public TemperatureController(AbstractWashingMachine mach, double speed) {
+		super((long) (1000/speed)); // TODO: replace with suitable period
+		theMachine = mach;
+		theSpeed = speed;
+	}
+	
+	/*
+	public static final int TEMP_IDLE  = 0;
+
+	public static final int TEMP_SET   = 1; 
+	*/
+
+	public void perform() {
+		// TODO: implement this method
+		RTEvent rte = this.mailbox.tryFetch();
+		if (rte != null) {
+			tempEvent = (TemperatureEvent) rte;
+			mode = tempEvent.getMode();
+			wp = (WashingProgram) tempEvent.getSource();
+			if(mode == 0) {
+				theMachine.setHeating(false);
+				setTemperature = 0;
+			} else if (mode == 1) {
+				wp = (WashingProgram) tempEvent.getSource();
+				setTemperature = tempEvent.getTemperature();				
+			}
+		}
+		
+		if (mode == 1) {
+			if (theMachine.getTemperature() < setTemperature - 2) {
+				theMachine.setHeating(true);
+			} else if (theMachine.getTemperature() >= setTemperature) {
+				theMachine.setHeating(false);
+				if (wp != null) {
+					wp.putEvent(new AckEvent(this));
+					wp = null;
+				}
+			
+				
+			}
+		}
+	}
+}

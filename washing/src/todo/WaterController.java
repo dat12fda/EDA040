@@ -1,0 +1,122 @@
+package todo;
+
+
+import se.lth.cs.realtime.*;
+import se.lth.cs.realtime.event.RTEvent;
+import done.AbstractWashingMachine;
+
+
+public class WaterController extends PeriodicThread {
+	private AbstractWashingMachine theMachine;
+	private double theSpeed;
+	private double waterLevel;
+	private WaterEvent waterEvent;
+	private int mode;
+	private WashingProgram wp;
+	
+	
+	private boolean fill;
+	private boolean ack;
+	
+	public WaterController(AbstractWashingMachine mach, double speed) {
+		super((long) (1000/speed)); // TODO: replace with suitable period
+		theMachine = mach;
+		theSpeed = speed;
+		mode = 0;
+		
+	}
+
+	/*
+	public static final int WATER_IDLE  = 0;
+
+	public static final int WATER_FILL  = 1;
+
+	public static final int WATER_DRAIN = 2; */
+	
+	
+	public void perform() {
+		
+		RTEvent rte = this.mailbox.tryFetch();
+		if (rte != null) {
+			waterEvent = (WaterEvent) rte;
+			mode = waterEvent.getMode();
+			wp = (WashingProgram) waterEvent.getSource();
+			if (mode == 0) {
+				theMachine.setFill(false);
+				theMachine.setDrain(false);
+			} else if (mode == 1) {
+				waterLevel = waterEvent.getLevel();
+				System.out.println("Filling " + waterLevel);
+				theMachine.setFill(true);
+				theMachine.setDrain(false);
+				rte = null;
+			} else if (mode == 2) {
+				waterLevel = waterEvent.getLevel();
+				System.out.println("Draining " + waterLevel);
+				theMachine.setFill(false);
+				theMachine.setDrain(true);
+				rte = null;
+			}			
+		} else if (mode == 1 && theMachine.getWaterLevel() >= waterLevel) {
+			System.out.println("Water full");
+			theMachine.setFill(false);
+			wp.putEvent(new AckEvent(this));
+			wp = null;
+			mode = 0;			
+		} else if (mode == 2 && theMachine.getWaterLevel() <= waterLevel) {
+			System.out.println("Water drained");
+			theMachine.setDrain(false);
+			wp.putEvent(new AckEvent(this));
+			wp = null;
+			mode = 0;	
+						
+		}
+	/*	RTEvent rte = mailbox.tryFetch();
+			if (rte != null) {
+				waterEvent = (WaterEvent) rte;
+				int mode = waterEvent.getMode();
+					if (mode == 0) {
+						theMachine.setDrain(false);
+						theMachine.setFill(false);
+						fill = false;
+					} else if (mode == 1) {
+					theMachine.setDrain(false);
+						ack = true;
+						fill = true;
+						waterLevel = waterEvent.getLevel();
+						if (theMachine.getWaterLevel() < waterEvent.getLevel()) {
+							theMachine.setFill(true);
+						}
+					} else {
+					fill = false;
+						theMachine.setFill(false);
+						theMachine.setDrain(true);
+						waterLevel = 0;
+						ack = true;
+				}
+				} else if (fill) {
+					if (theMachine.getWaterLevel() >= waterLevel) {
+						theMachine.setFill(false);
+						if (ack) {
+						ack = false;
+							((WashingProgram) (waterEvent.getSource())).putEvent(new AckEvent(
+									this));
+						}
+					}
+				} else if (!fill) {
+					if (theMachine.getWaterLevel() <= waterLevel) {
+						if (ack) {
+							ack = false;
+							((WashingProgram) (waterEvent.getSource())).putEvent(new AckEvent(
+									this));
+						}
+					}
+				}*/
+		
+			
+		
+		
+		
+	}	
+	
+}
